@@ -1,10 +1,12 @@
 # Imports from 3rd party libraries
 import dash
+import pandas as pd
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
+import seaborn as sns
 
 # Imports from this application
 from app import app
@@ -15,14 +17,12 @@ column1 = dbc.Col(
     [
         dcc.Markdown(
             """
-        
-            ## Your Value Proposition
-
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
+            ## Movies - getting a bang for your buck
+            Movie_monies provides potential revenue of bigger budget films, estimate the effects of any particular 
+            
+            feature on revenues. Adjust some features of an upcoming film production to see potential impacts on revenue.      
+          
+           
 
             """
         ),
@@ -31,9 +31,8 @@ column1 = dbc.Col(
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
+df = pd.read_csv('https://raw.githubusercontent.com/peterger8y/Movie_money/main/df_x')
+fig = sns.pairplot(df, vars = ['duration', 'revenue', 'vote_count', 'year'])
 
 column2 = dbc.Col(
     [
