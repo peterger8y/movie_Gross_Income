@@ -16,7 +16,8 @@ navbar = dbc.NavbarSimple(
     children=[
         dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')), 
         dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')), 
-        dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')), 
+        dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')),
+        dbc.NavItem(dcc.Link('Page Name', href='/pagename', className='nav-link')),
     ],
     sticky='top',
     color='light', 
@@ -72,6 +73,8 @@ def display_page(pathname):
         return insights.layout
     elif pathname == '/process':
         return process.layout
+    elif pathname == '/pagename':
+        return pagename.layout
     else:
         return dcc.Markdown('## Page not found')
 
