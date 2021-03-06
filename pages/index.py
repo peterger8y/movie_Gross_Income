@@ -32,7 +32,7 @@ column1 = dbc.Col(
 )
 
 df = pd.read_csv('https://raw.githubusercontent.com/peterger8y/Movie_money/main/df_x')
-fig = sns.pairplot(df, vars = ['duration', 'revenue', 'vote_count', 'year'])
+fig = px.scatter_matrix(df, dimensions=['duration', 'revenue', 'vote_count', 'year'])
 
 column2 = dbc.Col(
     [
