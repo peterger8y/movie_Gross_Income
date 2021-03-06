@@ -11,7 +11,7 @@ dash-bootstrap-components = "*"
 gunicorn = "*"
 plotly = "*"
 pandas = "*"
-seabron = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3"
