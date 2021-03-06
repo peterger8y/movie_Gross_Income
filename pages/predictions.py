@@ -17,7 +17,7 @@ column1 = dbc.Col(
         
             ## Predictions
 
-            Your instructions: How to use your app to get new predictions.
+            Enter the information about your film prodcution below, and the available model will output a prediction for gross revenue.
 
             """
         ),
@@ -27,6 +27,14 @@ column1 = dbc.Col(
 
 column2 = dbc.Col(
     [
+        html.Div([
+    html.H6("Change the value in the text box to see callbacks in action!"),
+    html.Div(["Input: ",
+              dcc.Input(id='my-input', value='initial value', type='text')]),
+    html.Br(),
+    html.Div(id='my-output'),
+
+])
 
     ]
 )
